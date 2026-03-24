@@ -1,0 +1,1793 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Jamilur Rahman Khan | Computer Science Engineer Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: "#0b0f19",
+              surface: "#111827",
+              surface2: "#0f172a",
+              card: "rgba(17,24,39,0.72)",
+              cardSolid: "#111827",
+              line: "rgba(148,163,184,0.14)",
+              lineStrong: "rgba(148,163,184,0.25)",
+              text: "#e5edf7",
+              muted: "#94a3b8",
+              primary: "#38bdf8",
+              primary2: "#22d3ee",
+              accent: "#8b5cf6",
+              success: "#34d399",
+            },
+            fontFamily: {
+              headline: ["Space Grotesk", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+            },
+            boxShadow: {
+              glow: "0 0 0 1px rgba(56,189,248,0.12), 0 12px 40px rgba(14,165,233,0.16)",
+              soft: "0 10px 30px rgba(2,6,23,0.35)",
+              card: "0 8px 30px rgba(2,6,23,0.35)",
+            },
+            backgroundImage: {
+              "hero-grid":
+                "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background:
+          radial-gradient(
+            circle at top left,
+            rgba(34, 211, 238, 0.1),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at top right,
+            rgba(139, 92, 246, 0.12),
+            transparent 24%
+          ),
+          radial-gradient(
+            circle at bottom center,
+            rgba(56, 189, 248, 0.08),
+            transparent 28%
+          ),
+          #0b0f19;
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 500,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+
+      .glass {
+        background: rgba(15, 23, 42, 0.72);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1px solid rgba(148, 163, 184, 0.12);
+      }
+
+      .hero-grid {
+        background-size: 34px 34px;
+        background-position: center;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(26px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .nav-link.active {
+        color: #38bdf8;
+      }
+
+      .section-anchor {
+        scroll-margin-top: 100px;
+      }
+
+      .mobile-menu-hidden {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        pointer-events: none;
+        transition:
+          max-height 0.35s ease,
+          opacity 0.25s ease;
+      }
+
+      .mobile-menu-open {
+        max-height: 500px;
+        opacity: 1;
+        pointer-events: auto;
+        transition:
+          max-height 0.35s ease,
+          opacity 0.25s ease;
+      }
+
+      .gradient-border {
+        position: relative;
+        background: linear-gradient(
+          180deg,
+          rgba(17, 24, 39, 0.92),
+          rgba(15, 23, 42, 0.92)
+        );
+      }
+
+      .gradient-border::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 1px;
+        border-radius: inherit;
+        background: linear-gradient(
+          135deg,
+          rgba(56, 189, 248, 0.45),
+          rgba(139, 92, 246, 0.28),
+          rgba(255, 255, 255, 0.08)
+        );
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body
+    class="font-body text-text selection:bg-primary selection:text-slate-950"
+  >
+    <!-- background -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+      <div
+        class="absolute inset-0 hero-grid bg-hero-grid opacity-[0.045]"
+      ></div>
+      <div
+        class="absolute top-[-120px] left-[-120px] h-[340px] w-[340px] rounded-full bg-primary/20 blur-3xl"
+      ></div>
+      <div
+        class="absolute right-[-140px] top-[80px] h-[340px] w-[340px] rounded-full bg-accent/20 blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-[-120px] left-1/2 h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-primary2/10 blur-3xl"
+      ></div>
+    </div>
+
+    <!-- navbar -->
+    <header class="fixed top-0 z-50 w-full">
+      <nav
+        class="mx-auto mt-4 w-[calc(100%-1.25rem)] max-w-7xl rounded-2xl glass shadow-soft"
+      >
+        <div class="flex items-center justify-between px-5 py-4 md:px-7">
+          <a
+            href="#home"
+            class="font-headline text-lg font-bold tracking-tight sm:text-xl"
+          >
+            Jamilur Rahman Khan<span class="text-primary">.</span>
+          </a>
+
+          <div class="hidden items-center gap-7 md:flex">
+            <a
+              href="#home"
+              class="nav-link text-sm text-muted hover:text-text transition"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="nav-link text-sm text-muted hover:text-text transition"
+              >About</a
+            >
+            <a
+              href="#skills"
+              class="nav-link text-sm text-muted hover:text-text transition"
+              >Skills</a
+            >
+            <a
+              href="#projects"
+              class="nav-link text-sm text-muted hover:text-text transition"
+              >Projects</a
+            >
+            <a
+              href="#experience"
+              class="nav-link text-sm text-muted hover:text-text transition"
+              >Experience</a
+            >
+            <a
+              href="#education"
+              class="nav-link text-sm text-muted hover:text-text transition"
+              >Education</a
+            >
+            <a
+              href="#contact"
+              class="nav-link text-sm text-muted hover:text-text transition"
+              >Contact</a
+            >
+            <a
+              href="#contact"
+              class="rounded-xl bg-gradient-to-r from-primary to-primary2 px-4 py-2 text-sm font-semibold text-slate-950 shadow-glow transition hover:-translate-y-0.5"
+            >
+              Hire Me
+            </a>
+          </div>
+
+          <button
+            id="menuButton"
+            class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-white/5 text-text transition hover:border-lineStrong hover:bg-white/10 md:hidden"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            type="button"
+          >
+            <span id="menuIcon" class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
+
+        <div
+          id="mobileMenu"
+          class="mobile-menu-hidden border-t border-line md:hidden"
+        >
+          <div class="flex flex-col gap-1 px-4 py-4">
+            <a
+              href="#home"
+              class="mobile-link rounded-xl px-4 py-3 text-sm text-muted hover:bg-white/5 hover:text-text"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="mobile-link rounded-xl px-4 py-3 text-sm text-muted hover:bg-white/5 hover:text-text"
+              >About</a
+            >
+            <a
+              href="#skills"
+              class="mobile-link rounded-xl px-4 py-3 text-sm text-muted hover:bg-white/5 hover:text-text"
+              >Skills</a
+            >
+            <a
+              href="#projects"
+              class="mobile-link rounded-xl px-4 py-3 text-sm text-muted hover:bg-white/5 hover:text-text"
+              >Projects</a
+            >
+            <a
+              href="#experience"
+              class="mobile-link rounded-xl px-4 py-3 text-sm text-muted hover:bg-white/5 hover:text-text"
+              >Experience</a
+            >
+            <a
+              href="#education"
+              class="mobile-link rounded-xl px-4 py-3 text-sm text-muted hover:bg-white/5 hover:text-text"
+              >Education</a
+            >
+            <a
+              href="#contact"
+              class="mobile-link rounded-xl px-4 py-3 text-sm text-muted hover:bg-white/5 hover:text-text"
+              >Contact</a
+            >
+            <a
+              href="#contact"
+              class="mt-2 rounded-xl bg-gradient-to-r from-primary to-primary2 px-4 py-3 text-center text-sm font-semibold text-slate-950"
+            >
+              Let’s Work Together
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- hero -->
+      <section
+        id="home"
+        class="section-anchor mx-auto flex min-h-screen max-w-7xl items-center px-5 pt-32 sm:px-6 lg:px-8"
+      >
+        <div class="grid items-center gap-12 lg:grid-cols-2">
+          <div class="reveal">
+            <div class="mb-5 flex flex-wrap gap-3">
+              <!-- <div class="inline-flex items-center gap-2 rounded-full border border-line bg-white/5 px-3 py-1.5 text-xs text-muted">
+              <span class="h-2 w-2 rounded-full bg-success"></span>
+              Available for internships & freelance work
+            </div> -->
+              <div
+                class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs text-primary"
+              >
+                Building modern web products
+              </div>
+            </div>
+
+            <h1
+              class="font-headline text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+            >
+              Computer Science Engineer building
+              <span
+                class="bg-gradient-to-r from-primary to-primary2 bg-clip-text text-transparent"
+              >
+                scalable, polished, user-focused
+              </span>
+              software.
+            </h1>
+
+            <p class="mt-6 max-w-2xl text-base leading-8 text-muted sm:text-lg">
+              I design and develop modern web applications with strong
+              fundamentals in data structures, software engineering, backend
+              systems, and clean UI. I focus on building products that are
+              performant, elegant, and ready for real-world use.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+              <span
+                class="rounded-full border border-line bg-white/5 px-3 py-2 text-xs text-text/90"
+                >Full-Stack Development</span
+              >
+              <span
+                class="rounded-full border border-line bg-white/5 px-3 py-2 text-xs text-text/90"
+                >Problem Solving</span
+              >
+              <span
+                class="rounded-full border border-line bg-white/5 px-3 py-2 text-xs text-text/90"
+                >DSA & CS Fundamentals</span
+              >
+              <span
+                class="rounded-full border border-line bg-white/5 px-3 py-2 text-xs text-text/90"
+                >Responsive UI Engineering</span
+              >
+            </div>
+
+            <div class="mt-10 flex flex-wrap gap-4">
+              <a
+                href="#projects"
+                class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary2 px-6 py-3.5 font-semibold text-slate-950 shadow-glow transition hover:-translate-y-0.5"
+              >
+                View Projects
+                <span class="material-symbols-outlined text-[20px]"
+                  >arrow_forward</span
+                >
+              </a>
+              <a
+                href="#contact"
+                class="inline-flex items-center gap-2 rounded-xl border border-lineStrong bg-white/5 px-6 py-3.5 font-semibold text-text transition hover:border-primary/30 hover:bg-white/10"
+              >
+                Contact Me
+              </a>
+              <a
+                href="./Resume_Jamilur_Rahman_Khan.pdf"
+                download="Jamilur_Rahman_Khan_Resume.pdf"
+                class="inline-flex items-center gap-2 rounded-xl border border-line bg-transparent px-6 py-3.5 font-semibold text-muted transition hover:text-text"
+              >
+                Download Resume
+              </a>
+            </div>
+
+            <div
+              class="mt-10 flex flex-wrap items-center gap-5 text-sm text-muted"
+            >
+              <a
+                href="https://github.com/JamilurRahmanKhan/"
+                class="transition hover:text-primary"
+                target="_blank"
+                >GitHub</a
+              >
+              <a
+                href="linkedin.com/in/jamilurrahmankhan/"
+                class="transition hover:text-primary"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <a
+                href="https://leetcode.com/u/jamilurrahmankhan32/"
+                class="transition hover:text-primary"
+                target="_blank"
+                >LeetCode</a
+              >
+              <!-- <a href="#" class="transition hover:text-primary">Codeforces</a> -->
+              <a
+                href="mailto:jamilurrahmankhan32@gmail.com"
+                class="transition hover:text-primary"
+                target="_blank"
+                >Email</a
+              >
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div
+              class="gradient-border relative mx-auto max-w-md rounded-[2rem] p-3 shadow-card"
+            >
+              <div
+                class="relative overflow-hidden rounded-[1.5rem] bg-slate-900"
+              >
+                <img
+                  src="./images/jamilur.jpg"
+                  alt="Professional portrait"
+                  class="aspect-[4/5] w-full object-cover"
+                />
+                <div
+                  class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent p-6"
+                >
+                  <div
+                    class="rounded-2xl border border-white/10 bg-slate-950/55 p-4 backdrop-blur"
+                  >
+                    <p class="text-xs uppercase tracking-[0.18em] text-primary">
+                      Engineering Focus
+                    </p>
+                    <div class="mt-3 grid grid-cols-2 gap-3 text-sm">
+                      <div class="rounded-xl border border-line bg-white/5 p-3">
+                        <p class="text-muted">Stack</p>
+                        <p class="mt-1 font-semibold text-text">
+                          React · Next · Node
+                        </p>
+                      </div>
+                      <div class="rounded-xl border border-line bg-white/5 p-3">
+                        <p class="text-muted">Core</p>
+                        <p class="mt-1 font-semibold text-text">
+                          DSA · OOP · DBMS
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-primary/20 blur-2xl"
+              ></div>
+              <div
+                class="pointer-events-none absolute -bottom-8 -left-8 h-24 w-24 rounded-full bg-accent/20 blur-2xl"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- about -->
+      <section
+        id="about"
+        class="section-anchor mx-auto max-w-7xl px-5 py-24 sm:px-6 lg:px-8"
+      >
+        <div class="grid gap-8 lg:grid-cols-12">
+          <div class="reveal lg:col-span-4">
+            <p
+              class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary"
+            >
+              About Me
+            </p>
+            <h2
+              class="font-headline text-3xl font-bold tracking-tight sm:text-4xl"
+            >
+              Engineering with clarity, structure, and real-world impact.
+            </h2>
+          </div>
+
+          <div class="reveal lg:col-span-8">
+            <div class="grid gap-6 md:grid-cols-2">
+              <div
+                class="rounded-3xl border border-line bg-white/5 p-6 shadow-card"
+              >
+                <h3 class="font-headline text-xl font-semibold">Who I Am</h3>
+                <p class="mt-3 leading-7 text-muted">
+                  I am a Computer Science Engineer focused on software
+                  development, clean architecture, and performance-driven
+                  systems. I enjoy transforming ideas into robust digital
+                  products with strong engineering discipline and thoughtful
+                  design.
+                </p>
+              </div>
+
+              <div
+                class="rounded-3xl border border-line bg-white/5 p-6 shadow-card"
+              >
+                <h3 class="font-headline text-xl font-semibold">
+                  What I Bring
+                </h3>
+                <p class="mt-3 leading-7 text-muted">
+                  Strong problem-solving, solid computer science fundamentals,
+                  full-stack development experience, and a mindset of continuous
+                  learning. I care about maintainable code, usability,
+                  scalability, and practical business value.
+                </p>
+              </div>
+
+              <div
+                class="rounded-3xl border border-line bg-white/5 p-6 shadow-card"
+              >
+                <h3 class="font-headline text-xl font-semibold">
+                  Career Direction
+                </h3>
+                <p class="mt-3 leading-7 text-muted">
+                  I am interested in software engineering, full-stack
+                  development, backend systems, developer tools, and
+                  product-focused engineering roles where I can grow by solving
+                  meaningful technical challenges.
+                </p>
+              </div>
+
+              <div
+                class="rounded-3xl border border-line bg-white/5 p-6 shadow-card"
+              >
+                <h3 class="font-headline text-xl font-semibold">
+                  Engineering Strengths
+                </h3>
+                <p class="mt-3 leading-7 text-muted">
+                  Data structures and algorithms, object-oriented thinking,
+                  responsive web interfaces, API integration, database design,
+                  team collaboration, and turning complexity into clear
+                  execution.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- skills -->
+      <section
+        id="skills"
+        class="section-anchor mx-auto max-w-7xl px-5 py-24 sm:px-6 lg:px-8"
+      >
+        <div class="reveal text-center">
+          <p
+            class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary"
+          >
+            Technical Profile
+          </p>
+          <h2
+            class="font-headline text-3xl font-bold tracking-tight sm:text-4xl"
+          >
+            Skills & Technology Stack
+          </h2>
+          <p class="mx-auto mt-4 max-w-2xl text-muted">
+            A structured skill set across software engineering, modern
+            development tools, backend systems, and computer science
+            fundamentals.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-5">
+          <!-- Languages -->
+          <div
+            class="reveal rounded-3xl border border-line bg-white/5 p-6 shadow-card"
+          >
+            <div class="mb-5 flex items-center gap-3">
+              <div class="rounded-2xl bg-primary/10 p-3 text-primary">
+                <span class="material-symbols-outlined">code</span>
+              </div>
+              <h3 class="font-headline text-xl font-semibold">Languages</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >C++</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Java</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Python</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >JavaScript</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >PHP</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >SQL</span
+              >
+            </div>
+          </div>
+
+          <!-- Frontend -->
+          <div
+            class="reveal rounded-3xl border border-line bg-white/5 p-6 shadow-card"
+          >
+            <div class="mb-5 flex items-center gap-3">
+              <div class="rounded-2xl bg-primary/10 p-3 text-primary">
+                <span class="material-symbols-outlined">web</span>
+              </div>
+              <h3 class="font-headline text-xl font-semibold">Frontend</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >React</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Next.js</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Tailwind CSS</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Livewire</span
+              >
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div
+            class="reveal rounded-3xl border border-line bg-white/5 p-6 shadow-card"
+          >
+            <div class="mb-5 flex items-center gap-3">
+              <div class="rounded-2xl bg-primary/10 p-3 text-primary">
+                <span class="material-symbols-outlined">dns</span>
+              </div>
+              <h3 class="font-headline text-xl font-semibold">Backend</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Node.js</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Express.js</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Spring Boot</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Spring Security</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Laravel</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Socket.IO</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >WebRTC</span
+              >
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div
+            class="reveal rounded-3xl border border-line bg-white/5 p-6 shadow-card"
+          >
+            <div class="mb-5 flex items-center gap-3">
+              <div class="rounded-2xl bg-primary/10 p-3 text-primary">
+                <span class="material-symbols-outlined">storage</span>
+              </div>
+              <h3 class="font-headline text-xl font-semibold">Databases</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >MySQL</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >MongoDB</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >PostgreSQL</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Neon</span
+              >
+            </div>
+          </div>
+
+          <!-- Tools & Deployment -->
+          <div
+            class="reveal rounded-3xl border border-line bg-white/5 p-6 shadow-card"
+          >
+            <div class="mb-5 flex items-center gap-3">
+              <div class="rounded-2xl bg-primary/10 p-3 text-primary">
+                <span class="material-symbols-outlined">build</span>
+              </div>
+              <h3 class="font-headline text-xl font-semibold">
+                Tools & DevOps
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Git</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >GitHub Actions</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Docker</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Vercel</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Railway</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Core CS -->
+        <div class="mt-6">
+          <div
+            class="reveal rounded-3xl border border-line bg-white/5 p-6 shadow-card"
+          >
+            <div class="mb-5 flex items-center gap-3">
+              <div class="rounded-2xl bg-primary/10 p-3 text-primary">
+                <span class="material-symbols-outlined">terminal</span>
+              </div>
+              <h3 class="font-headline text-xl font-semibold">
+                Core CS Fundamentals
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >DSA</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >OOP</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >DBMS</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Operating Systems</span
+              >
+              <span
+                class="rounded-full border border-line px-3 py-2 text-xs text-muted"
+                >Computer Networks</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- projects -->
+      <section
+        id="projects"
+        class="section-anchor mx-auto max-w-7xl px-5 py-24 sm:px-6 lg:px-8"
+      >
+        <div
+          class="reveal flex flex-col items-start justify-between gap-6 md:flex-row md:items-end"
+        >
+          <div>
+            <p
+              class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary"
+            >
+              Portfolio Highlights
+            </p>
+            <h2
+              class="font-headline text-3xl font-bold tracking-tight sm:text-4xl"
+            >
+              Featured Projects
+            </h2>
+            <p class="mt-4 max-w-2xl text-muted">
+              Projects that demonstrate full-stack development, problem solving,
+              clean architecture, and user-centered execution.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 grid gap-8 lg:grid-cols-2">
+          <article
+            class="reveal overflow-hidden rounded-[1.75rem] border border-line bg-white/5 shadow-card transition hover:-translate-y-1 hover:border-primary/20"
+          >
+            <div class="aspect-[16/9] overflow-hidden">
+              <img
+                src="./images/shasthoAIMockup.png"
+                alt="ShasthoAI project preview"
+                class="h-full w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+
+            <div class="p-7">
+              <div class="mb-4 flex items-center justify-between gap-3">
+                <div>
+                  <p
+                    class="text-xs font-semibold uppercase tracking-[0.18em] text-primary"
+                  >
+                    Featured Project
+                  </p>
+                  <h3 class="mt-1 font-headline text-2xl font-semibold">
+                    ShasthoAI
+                  </h3>
+                </div>
+
+                <span
+                  class="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[11px] font-semibold text-primary"
+                >
+                  AI + Telemedicine
+                </span>
+              </div>
+
+              <p class="text-sm leading-7 text-muted">
+                ShasthoAI is a full-stack AI-powered telemedicine platform
+                designed for fracture detection, remote consultation,
+                patient-doctor communication, pharmacy operations, and
+                role-based healthcare management. It integrates X-ray analysis
+                with medical reporting, appointment scheduling, realtime
+                messaging, video calling, medical record management, pharmacy
+                services, and admin controls in a single unified system.
+              </p>
+
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  React
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Node.js
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Express.js
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  MongoDB
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Firebase
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Socket.IO
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  WebRTC
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  AI / ML
+                </span>
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-5">
+                <a
+                  href="https://shastho-ai-fracture-detection-clien.vercel.app"
+                  target="_blank"
+                  class="font-semibold text-primary hover:underline"
+                >
+                  Live Demo
+                </a>
+                <a
+                  href="https://github.com/JamilurRahmanKhan/Shastho-AI-fracture-detection"
+                  target="_blank"
+                  class="font-semibold text-text hover:text-primary"
+                >
+                  GitHub Repo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="reveal overflow-hidden rounded-[1.75rem] border border-line bg-white/5 shadow-card transition hover:-translate-y-1 hover:border-primary/20"
+          >
+            <div class="aspect-[16/9] overflow-hidden">
+              <img
+                src="./images/studyXchangeMockup.png"
+                alt="StudyXchange project preview"
+                class="h-full w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+
+            <div class="p-7">
+              <div class="mb-4 flex items-center justify-between gap-3">
+                <div>
+                  <p
+                    class="text-xs font-semibold uppercase tracking-[0.18em] text-primary"
+                  >
+                    Featured Project
+                  </p>
+                  <h3 class="mt-1 font-headline text-2xl font-semibold">
+                    StudyXchange
+                  </h3>
+                </div>
+                <span
+                  class="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[11px] font-semibold text-primary"
+                >
+                  Laravel Full Stack
+                </span>
+              </div>
+
+              <p class="text-sm leading-7 text-muted">
+                StudyXchange is a role-based student career and academic
+                collaboration platform built to support admissions, community
+                Q&amp;A, research collaboration, resource spaces, job
+                applications, skill assessments, and career recommendations. It
+                includes separate dashboards for students, university admins,
+                company admins, and super admins, creating a complete ecosystem
+                for academic and career growth.
+              </p>
+
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Laravel 11
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  PHP 8.2+
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  MySQL
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Blade
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Tailwind CSS
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Vite
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Laravel Breeze
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Chatify
+                </span>
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-5">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="font-semibold text-primary hover:underline"
+                >
+                  Live Demo
+                </a>
+                <a
+                  href="https://github.com/JamilurRahmanKhan/StudyXchange"
+                  class="font-semibold text-text hover:text-primary"
+                  target="_blank"
+                >
+                  GitHub Repo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="reveal overflow-hidden rounded-[1.75rem] border border-line bg-white/5 shadow-card transition hover:-translate-y-1 hover:border-primary/20"
+          >
+            <div class="aspect-[16/9] overflow-hidden">
+              <img
+                src="./images/flowforgeMockup.png"
+                alt="FlowForge project preview"
+                class="h-full w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+
+            <div class="p-7">
+              <div class="mb-4 flex items-center justify-between gap-3">
+                <div>
+                  <p
+                    class="text-xs font-semibold uppercase tracking-[0.18em] text-primary"
+                  >
+                    Featured Project
+                  </p>
+                  <h3 class="mt-1 font-headline text-2xl font-semibold">
+                    FlowForge
+                  </h3>
+                </div>
+                <span
+                  class="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[11px] font-semibold text-primary"
+                >
+                  Multi-Tenant SaaS
+                </span>
+              </div>
+
+              <p class="text-sm leading-7 text-muted">
+                FlowForge is a multi-tenant SaaS project management and
+                collaboration platform built for teams and organizations to
+                manage workspaces, projects, tasks, members, and activity in one
+                place. It includes workspace-based authentication, role and
+                member-aware access control, project-specific member assignment,
+                task workflows, workspace switching, and a responsive
+                desktop/mobile experience.
+              </p>
+
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Next.js
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  React
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  TypeScript
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Tailwind CSS
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Java
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Spring Boot
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Spring Security
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  JPA / Hibernate
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  PostgreSQL
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  JWT
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Vercel
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Railway
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Neon
+                </span>
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-5">
+                <a
+                  href="https://flowforge-collaboration.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-semibold text-primary hover:underline"
+                >
+                  Live Demo
+                </a>
+                <a
+                  href="https://github.com/JamilurRahmanKhan/flowforge"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-semibold text-text hover:text-primary"
+                >
+                  GitHub Repo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="reveal overflow-hidden rounded-[1.75rem] border border-line bg-white/5 shadow-card transition hover:-translate-y-1 hover:border-primary/20"
+          >
+            <div class="aspect-[16/9] overflow-hidden">
+              <img
+                src="./images/fsoMockup.png"
+                alt="ML-based performance prediction and optimization of FSO links project preview"
+                class="h-full w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+
+            <div class="p-7">
+              <div class="mb-4 flex items-center justify-between gap-3">
+                <div>
+                  <p
+                    class="text-xs font-semibold uppercase tracking-[0.18em] text-primary"
+                  >
+                    Thesis Project
+                  </p>
+                  <h3 class="mt-1 font-headline text-2xl font-semibold">
+                    ML-Based Performance Prediction and Optimization of FSO
+                    Links
+                  </h3>
+                </div>
+                <span
+                  class="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[11px] font-semibold text-primary"
+                >
+                  ML + Communication Systems
+                </span>
+              </div>
+
+              <p class="text-sm leading-7 text-muted">
+                This thesis project analyzes the performance of Free Space
+                Optical (FSO) communication links using physics-based modeling,
+                machine learning, and real environmental data. The system
+                predicts key link metrics such as SNR and BER under varying
+                distance and weather conditions, and visualizes the degradation
+                caused by rain through an interactive comparison interface. A
+                Random Forest Regression model is used to predict BER, while
+                theoretical FSO link equations are used to simulate baseline
+                system behavior and support optimization analysis.
+              </p>
+
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Python
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Machine Learning
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Random Forest Regression
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  FSO Communication
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  SNR / BER Analysis
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Data Visualization
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Weather-aware Modeling
+                </span>
+                <span
+                  class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                >
+                  Simulation
+                </span>
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-5">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="font-semibold text-primary hover:underline"
+                >
+                  Live Demo
+                </a>
+                <a
+                  href="https://github.com/JamilurRahmanKhan/ML-based-performance-prediction-and-optimization-of-FSO-links"
+                  target="_blank"
+                  class="font-semibold text-text hover:text-primary"
+                >
+                  GitHub Repo
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- experience -->
+      <section
+        id="experience"
+        class="section-anchor mx-auto max-w-7xl px-5 py-24 sm:px-6 lg:px-8"
+      >
+        <div class="reveal mb-12">
+          <p
+            class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary"
+          >
+            Professional Journey
+          </p>
+          <h2
+            class="font-headline text-3xl font-bold tracking-tight sm:text-4xl"
+          >
+            Experience & Achievements
+          </h2>
+        </div>
+
+        <div class="grid gap-8 lg:grid-cols-3">
+          <div class="reveal space-y-5">
+            <div
+              class="rounded-3xl border border-line bg-white/5 p-6 shadow-card"
+            >
+              <h3 class="font-headline text-lg font-semibold">
+                Problem Solving
+              </h3>
+              <p class="mt-3 text-3xl font-bold text-primary">150+</p>
+              <p class="mt-2 text-sm leading-7 text-muted">
+                Solved coding problems across online judges and practice
+                platforms.
+              </p>
+            </div>
+
+            <div
+              class="rounded-3xl border border-line bg-white/5 p-6 shadow-card"
+            >
+              <h3 class="font-headline text-lg font-semibold">
+                Projects Built
+              </h3>
+              <p class="mt-3 text-3xl font-bold text-primary">8+</p>
+              <p class="mt-2 text-sm leading-7 text-muted">
+                Academic and personal projects spanning frontend, backend, and
+                full-stack applications.
+              </p>
+            </div>
+
+            <div
+              class="rounded-3xl border border-line bg-white/5 p-6 shadow-card"
+            >
+              <h3 class="font-headline text-lg font-semibold">Focus Areas</h3>
+              <p class="mt-3 text-sm leading-7 text-muted">
+                Software engineering, full-stack web development, system
+                thinking, and computer science fundamentals.
+              </p>
+            </div>
+          </div>
+
+          <div class="reveal lg:col-span-2">
+            <div
+              class="relative space-y-6 before:absolute before:left-[11px] before:top-2 before:h-[calc(100%-16px)] before:w-px before:bg-line"
+            >
+              <div class="relative pl-10">
+                <span
+                  class="absolute left-0 top-2 h-6 w-6 rounded-full border-4 border-background bg-primary"
+                ></span>
+                <div
+                  class="rounded-3xl border border-line bg-white/5 p-6 shadow-card"
+                >
+                  <div
+                    class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
+                  >
+                    <div>
+                      <h3 class="font-headline text-xl font-semibold">
+                        Full-Stack Development Projects
+                      </h3>
+                      <p class="mt-1 text-sm text-primary">
+                        Personal / Academic Work
+                      </p>
+                    </div>
+                    <span class="text-sm text-muted">2024 — Present</span>
+                  </div>
+                  <ul class="mt-4 space-y-3 text-sm leading-7 text-muted">
+                    <li>
+                      • Built responsive web applications with reusable UI
+                      components and clean layout systems.
+                    </li>
+                    <li>
+                      • Practiced project structuring, frontend optimization,
+                      and backend integration.
+                    </li>
+                    <li>
+                      • Focused on clean code, responsiveness, and
+                      portfolio-quality product presentation.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="relative pl-10">
+                <span
+                  class="absolute left-0 top-2 h-6 w-6 rounded-full border-4 border-background bg-primary2"
+                ></span>
+                <div
+                  class="rounded-3xl border border-line bg-white/5 p-6 shadow-card"
+                >
+                  <div
+                    class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
+                  >
+                    <div>
+                      <h3 class="font-headline text-xl font-semibold">
+                        Competitive Programming & Problem Solving
+                      </h3>
+                      <p class="mt-1 text-sm text-primary">
+                        Continuous Learning
+                      </p>
+                    </div>
+                    <span class="text-sm text-muted">Ongoing</span>
+                  </div>
+                  <ul class="mt-4 space-y-3 text-sm leading-7 text-muted">
+                    <li>
+                      • Strengthened logical reasoning through structured
+                      problem solving.
+                    </li>
+                    <li>
+                      • Improved efficiency in algorithm design, debugging, and
+                      time complexity analysis.
+                    </li>
+                    <li>
+                      • Built a stronger foundation in DSA, recursion, greedy
+                      methods, and graphs.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="relative pl-10">
+                <span
+                  class="absolute left-0 top-2 h-6 w-6 rounded-full border-4 border-background bg-accent"
+                ></span>
+                <div
+                  class="rounded-3xl border border-line bg-white/5 p-6 shadow-card"
+                >
+                  <div
+                    class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
+                  >
+                    <div>
+                      <h3 class="font-headline text-xl font-semibold">
+                        Teamwork & Collaboration
+                      </h3>
+                      <p class="mt-1 text-sm text-primary">
+                        Project-Based Work
+                      </p>
+                    </div>
+                    <span class="text-sm text-muted">Recent</span>
+                  </div>
+                  <ul class="mt-4 space-y-3 text-sm leading-7 text-muted">
+                    <li>
+                      • Worked on project planning, feature breakdown, and
+                      implementation tasks.
+                    </li>
+                    <li>
+                      • Practiced collaborative development, version control,
+                      and structured problem ownership.
+                    </li>
+                    <li>
+                      • Focused on writing maintainable and understandable code
+                      for shared development workflows.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- education -->
+      <section
+        id="education"
+        class="section-anchor mx-auto max-w-7xl px-5 py-24 sm:px-6 lg:px-8"
+      >
+        <div class="grid gap-8 lg:grid-cols-3">
+          <div
+            class="reveal lg:col-span-2 rounded-[1.75rem] border border-line bg-white/5 p-8 shadow-card"
+          >
+            <p
+              class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary"
+            >
+              Education
+            </p>
+            <h2 class="font-headline text-3xl font-bold tracking-tight">
+              Academic Background
+            </h2>
+
+            <div
+              class="mt-8 flex flex-col gap-8 lg:flex-row lg:justify-between"
+            >
+              <div class="flex-1">
+                <h3 class="font-headline text-2xl font-semibold">
+                  B.Sc. in Computer Science & Engineering
+                </h3>
+                <p class="mt-2 text-lg text-primary">
+                  United International University
+                </p>
+                <p class="mt-2 text-sm text-muted">
+                  Graduation: 2025 · CGPA: 3.72
+                </p>
+
+                <div class="mt-6">
+                  <h4 class="font-semibold text-text">Relevant Coursework</h4>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <span
+                      class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                      >Data Structures & Algorithms</span
+                    >
+                    <span
+                      class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                      >OOP</span
+                    >
+                    <span
+                      class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                      >DBMS</span
+                    >
+                    <span
+                      class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                      >Operating Systems</span
+                    >
+                    <span
+                      class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                      >Computer Networks</span
+                    >
+                    <span
+                      class="rounded-full border border-line px-3 py-1.5 text-xs text-muted"
+                      >Software Engineering</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="w-full self-start h-fit rounded-3xl border border-line bg-slate-950/40 p-6 shadow-card lg:max-w-xs"
+              >
+                <h4 class="font-headline text-lg font-semibold">
+                  Certifications
+                </h4>
+
+                <a
+                  href="./images/webdevLaravel.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block mt-5"
+                >
+                  <div
+                    class="rounded-2xl border border-line bg-white/5 p-5 transition hover:border-primary/20 hover:bg-white/[0.07]"
+                  >
+                    <div class="flex items-start justify-between gap-3">
+                      <div>
+                        <p class="font-semibold text-text">
+                          Web Development Using Laravel & Vue
+                        </p>
+                        <p class="mt-1 text-sm text-muted">Date · 2024</p>
+                      </div>
+                      <span
+                        class="material-symbols-outlined text-primary text-[20px]"
+                        >open_in_new</span
+                      >
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="reveal rounded-[1.75rem] border border-line bg-white/5 p-8 shadow-card"
+          >
+            <p
+              class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary"
+            >
+              Highlights
+            </p>
+            <h3 class="font-headline text-2xl font-semibold">
+              Career Snapshot
+            </h3>
+
+            <div class="mt-6 space-y-5">
+              <div class="rounded-2xl border border-line bg-slate-950/35 p-5">
+                <p class="text-sm text-muted">Focus</p>
+                <p class="mt-1 font-semibold">Software Engineering</p>
+              </div>
+              <div class="rounded-2xl border border-line bg-slate-950/35 p-5">
+                <p class="text-sm text-muted">Interest</p>
+                <p class="mt-1 font-semibold">Full-Stack / Backend Roles</p>
+              </div>
+              <div class="rounded-2xl border border-line bg-slate-950/35 p-5">
+                <p class="text-sm text-muted">Strength</p>
+                <p class="mt-1 font-semibold">
+                  Problem Solving + Practical Build Skills
+                </p>
+              </div>
+              <div class="rounded-2xl border border-line bg-slate-950/35 p-5">
+                <p class="text-sm text-muted">Open To</p>
+                <p class="mt-1 font-semibold">Collaborations</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- contact -->
+      <section
+        id="contact"
+        class="section-anchor mx-auto max-w-7xl px-5 py-24 sm:px-6 lg:px-8"
+      >
+        <div
+          class="reveal overflow-hidden rounded-[2rem] border border-line bg-white/5 shadow-card"
+        >
+          <div class="p-8 sm:p-10 lg:p-12">
+            <p
+              class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary"
+            >
+              Contact
+            </p>
+
+            <h2
+              class="font-headline text-3xl font-bold tracking-tight sm:text-4xl"
+            >
+              Let’s build something meaningful.
+            </h2>
+
+            <p class="mt-5 max-w-2xl leading-8 text-muted">
+              I’m open to internships, freelance work, collaborations, and
+              software engineering opportunities. Reach out if you’d like to
+              discuss a project, role, or technical idea.
+            </p>
+
+            <div class="mt-10 grid gap-5 sm:grid-cols-2">
+              <div
+                class="flex items-start gap-4 rounded-2xl border border-line bg-white/5 p-5"
+              >
+                <div class="rounded-2xl bg-primary/10 p-3 text-primary">
+                  <span class="material-symbols-outlined">mail</span>
+                </div>
+                <div>
+                  <p class="text-sm text-muted">Email</p>
+                  <p class="font-semibold">jamilurrahmankhan32@gmail.com</p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-start gap-4 rounded-2xl border border-line bg-white/5 p-5"
+              >
+                <div class="rounded-2xl bg-primary/10 p-3 text-primary">
+                  <span class="material-symbols-outlined">call</span>
+                </div>
+                <div>
+                  <p class="text-sm text-muted">Phone</p>
+                  <p class="font-semibold">+880 1987044239</p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-start gap-4 rounded-2xl border border-line bg-white/5 p-5"
+              >
+                <div class="rounded-2xl bg-primary/10 p-3 text-primary">
+                  <span class="material-symbols-outlined">location_on</span>
+                </div>
+                <div>
+                  <p class="text-sm text-muted">Location</p>
+                  <p class="font-semibold">Bangladesh</p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-start gap-4 rounded-2xl border border-line bg-white/5 p-5"
+              >
+                <div class="rounded-2xl bg-primary/10 p-3 text-primary">
+                  <span class="material-symbols-outlined">language</span>
+                </div>
+                <div>
+                  <p class="text-sm text-muted">Profiles</p>
+                  <div class="mt-1 flex flex-wrap gap-3">
+                    <a
+                      href="https://github.com/JamilurRahmanKhan"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="font-semibold text-text transition hover:text-primary hover:underline"
+                    >
+                      GitHub
+                    </a>
+                    <span class="text-muted">·</span>
+                    <a
+                      href="http://linkedin.com/in/jamilurrahmankhan"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="font-semibold text-text transition hover:text-primary hover:underline"
+                    >
+                      LinkedIn
+                    </a>
+                    <span class="text-muted">·</span>
+                    <a
+                      href="https://leetcode.com/u/jamilurrahmankhan32"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="font-semibold text-text transition hover:text-primary hover:underline"
+                    >
+                      LeetCode
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-line px-5 py-8 sm:px-6 lg:px-8">
+      <div
+        class="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-muted md:flex-row md:items-center md:justify-between"
+      >
+        <p>
+          © 2026 Jamilur Rahman Khan. Built with precision and clean
+          engineering.
+        </p>
+        <div class="flex flex-wrap gap-5">
+          <a
+            href="https://github.com/JamilurRahmanKhan"
+            target="_blank"
+            class="transition hover:text-primary"
+            >GitHub</a
+          >
+          <a href="#" target="_blank" class="transition hover:text-primary"
+            >LinkedIn</a
+          >
+          <a href="#" target="_blank" class="transition hover:text-primary"
+            >LeetCode</a
+          >
+          <!-- <a href="#" target="_blank" class="transition hover:text-primary"
+            >Codeforces</a
+          > -->
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const menuButton = document.getElementById("menuButton");
+      const menuIcon = document.getElementById("menuIcon");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
+      const reveals = document.querySelectorAll(".reveal");
+
+      let menuOpen = false;
+
+      function openMenu() {
+        menuOpen = true;
+        mobileMenu.classList.remove("mobile-menu-hidden");
+        mobileMenu.classList.add("mobile-menu-open");
+        menuButton.setAttribute("aria-expanded", "true");
+        menuIcon.textContent = "close";
+      }
+
+      function closeMenu() {
+        menuOpen = false;
+        mobileMenu.classList.remove("mobile-menu-open");
+        mobileMenu.classList.add("mobile-menu-hidden");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuIcon.textContent = "menu";
+      }
+
+      menuButton.addEventListener("click", () => {
+        if (menuOpen) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          closeMenu();
+        });
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          closeMenu();
+        }
+      });
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -10% 0px" },
+      );
+
+      reveals.forEach((item) => revealObserver.observe(item));
+
+      function setActiveNav() {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (window.scrollY >= sectionTop - 140) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          const href = link.getAttribute("href") || "";
+          if (href === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", setActiveNav);
+      window.addEventListener("load", setActiveNav);
+    </script>
+  </body>
+</html>
