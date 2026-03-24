@@ -1574,76 +1574,111 @@
       <!-- contact -->
       <section
         id="contact"
-        class="section-anchor mx-auto max-w-7xl px-5 py-24 sm:px-6 lg:px-8"
+        class="section-anchor mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
       >
         <div
-          class="reveal overflow-hidden rounded-[2rem] border border-line bg-white/5 shadow-card"
+          class="reveal overflow-hidden rounded-[1.5rem] border border-line bg-white/5 shadow-card sm:rounded-[2rem]"
         >
-          <div class="p-8 sm:p-10 lg:p-12">
+          <div class="p-6 sm:p-8 lg:p-12">
             <p
-              class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary"
+              class="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-primary sm:text-sm"
             >
               Contact
             </p>
 
             <h2
-              class="font-headline text-3xl font-bold tracking-tight sm:text-4xl"
+              class="font-headline text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl"
             >
               Let’s build something meaningful.
             </h2>
 
-            <p class="mt-5 max-w-2xl leading-8 text-muted">
+            <p
+              class="mt-4 max-w-2xl text-sm leading-7 text-muted sm:mt-5 sm:text-base sm:leading-8"
+            >
               I’m open to internships, freelance work, collaborations, and
               software engineering opportunities. Reach out if you’d like to
               discuss a project, role, or technical idea.
             </p>
 
-            <div class="mt-10 grid gap-5 sm:grid-cols-2">
+            <div
+              class="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2"
+            >
               <div
-                class="flex items-start gap-4 rounded-2xl border border-line bg-white/5 p-5"
+                class="flex items-start gap-4 rounded-2xl border border-line bg-white/5 p-4 sm:p-5"
               >
-                <div class="rounded-2xl bg-primary/10 p-3 text-primary">
-                  <span class="material-symbols-outlined">mail</span>
+                <div
+                  class="shrink-0 rounded-2xl bg-primary/10 p-3 text-primary"
+                >
+                  <span
+                    class="material-symbols-outlined text-[20px] sm:text-[22px]"
+                    >mail</span
+                  >
                 </div>
-                <div>
+                <div class="min-w-0">
                   <p class="text-sm text-muted">Email</p>
-                  <p class="font-semibold">jamilurrahmankhan32@gmail.com</p>
+                  <a
+                    href="mailto:jamilurrahmankhan32@gmail.com"
+                    class="break-all font-semibold text-text transition hover:text-primary hover:underline"
+                  >
+                    jamilurrahmankhan32@gmail.com
+                  </a>
                 </div>
               </div>
 
               <div
-                class="flex items-start gap-4 rounded-2xl border border-line bg-white/5 p-5"
+                class="flex items-start gap-4 rounded-2xl border border-line bg-white/5 p-4 sm:p-5"
               >
-                <div class="rounded-2xl bg-primary/10 p-3 text-primary">
-                  <span class="material-symbols-outlined">call</span>
+                <div
+                  class="shrink-0 rounded-2xl bg-primary/10 p-3 text-primary"
+                >
+                  <span
+                    class="material-symbols-outlined text-[20px] sm:text-[22px]"
+                    >call</span
+                  >
                 </div>
-                <div>
+                <div class="min-w-0">
                   <p class="text-sm text-muted">Phone</p>
-                  <p class="font-semibold">+880 1987044239</p>
+                  <a
+                    href="tel:+8801987044239"
+                    class="font-semibold text-text transition hover:text-primary hover:underline"
+                  >
+                    +880 1987044239
+                  </a>
                 </div>
               </div>
 
               <div
-                class="flex items-start gap-4 rounded-2xl border border-line bg-white/5 p-5"
+                class="flex items-start gap-4 rounded-2xl border border-line bg-white/5 p-4 sm:p-5"
               >
-                <div class="rounded-2xl bg-primary/10 p-3 text-primary">
-                  <span class="material-symbols-outlined">location_on</span>
+                <div
+                  class="shrink-0 rounded-2xl bg-primary/10 p-3 text-primary"
+                >
+                  <span
+                    class="material-symbols-outlined text-[20px] sm:text-[22px]"
+                    >location_on</span
+                  >
                 </div>
-                <div>
+                <div class="min-w-0">
                   <p class="text-sm text-muted">Location</p>
-                  <p class="font-semibold">Bangladesh</p>
+                  <p class="font-semibold text-text">Bangladesh</p>
                 </div>
               </div>
 
               <div
-                class="flex items-start gap-4 rounded-2xl border border-line bg-white/5 p-5"
+                class="flex items-start gap-4 rounded-2xl border border-line bg-white/5 p-4 sm:p-5"
               >
-                <div class="rounded-2xl bg-primary/10 p-3 text-primary">
-                  <span class="material-symbols-outlined">language</span>
+                <div
+                  class="shrink-0 rounded-2xl bg-primary/10 p-3 text-primary"
+                >
+                  <span
+                    class="material-symbols-outlined text-[20px] sm:text-[22px]"
+                    >language</span
+                  >
                 </div>
-                <div>
+                <div class="min-w-0">
                   <p class="text-sm text-muted">Profiles</p>
-                  <div class="mt-1 flex flex-wrap gap-3">
+
+                  <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-2">
                     <a
                       href="https://github.com/JamilurRahmanKhan"
                       target="_blank"
@@ -1652,7 +1687,9 @@
                     >
                       GitHub
                     </a>
-                    <span class="text-muted">·</span>
+
+                    <span class="hidden text-muted sm:inline">·</span>
+
                     <a
                       href="http://linkedin.com/in/jamilurrahmankhan"
                       target="_blank"
@@ -1661,7 +1698,9 @@
                     >
                       LinkedIn
                     </a>
-                    <span class="text-muted">·</span>
+
+                    <span class="hidden text-muted sm:inline">·</span>
+
                     <a
                       href="https://leetcode.com/u/jamilurrahmankhan32"
                       target="_blank"
